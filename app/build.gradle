@@ -1,0 +1,59 @@
+plugins {
+    alias(libs.plugins.androidApplication)
+}
+
+android {
+    namespace 'com.smf.toolbox'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.smf.toolbox"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        renderscriptTargetApi 21
+        renderscriptSupportModeEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+
+    def dialogx_version = "0.0.48"
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.constraintlayout
+    implementation libs.fastjson2
+    implementation libs.bcprov.jdk18on
+    implementation libs.androidx.recyclerview
+    implementation libs.androidx.palette
+    implementation libs.dialogX
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.test.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    implementation "com.kongzue.dialogx.style:DialogXIOSStyle:${dialogx_version}"
+    implementation "com.kongzue.dialogx.style:DialogXKongzueStyle:${dialogx_version}"
+    implementation "com.kongzue.dialogx.style:DialogXMIUIStyle:${dialogx_version}"
+    implementation "com.kongzue.dialogx.style:DialogXMaterialYouStyle:${dialogx_version}"
+
+    implementation 'com.github.getActivity:XXPermissions:18.2'
+
+    implementation 'androidx.documentfile:documentfile:1.1.0-alpha01'
+    implementation files('libs\\switcher-1.1.1.jar')
+}

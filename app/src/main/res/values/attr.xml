@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- 主要颜色，通常用于表示互动元素，如按钮和链接 -->
+    <attr name="colorPrimary" format="color"/>
+    <!-- 在主要颜色上显示的颜色，通常用于文本和图标 -->
+    <attr name="colorOnPrimary" format="color"/>
+    <!-- 主要颜色的容器，可以用于需要突出显示的元素 -->
+    <attr name="colorPrimaryContainer" format="color" tools:override="true" />
+    <!-- 在主要颜色容器上显示的颜色 -->
+    <attr name="colorOnPrimaryContainer" format="color" tools:override="true" />
+    <!-- 次要颜色，用于强调元素 -->
+    <attr name="colorSecondary" format="color"/>
+    <!-- 在次要颜色上显示的颜色 -->
+    <attr name="colorOnSecondary" format="color"/>
+    <!-- 次要颜色的容器，可以用于需要突出显示的元素 -->
+    <attr name="colorSecondaryContainer" format="color" tools:override="true" />
+    <!-- 在次要颜色容器上显示的颜色 -->
+    <attr name="colorOnSecondaryContainer" format="color" tools:override="true" />
+    <!-- 第三颜色，用于强调元素 -->
+    <attr name="colorTertiary" format="color" tools:override="true"/>
+    <!-- 在第三颜色上显示的颜色 -->
+    <attr name="colorOnTertiary" format="color" tools:override="true"/>
+    <!-- 第三颜色的容器，可以用于需要突出显示的元素 -->
+    <attr name="colorTertiaryContainer" format="color" tools:override="true"/>
+    <!-- 在第三颜色容器上显示的颜色 -->
+    <attr name="colorOnTertiaryContainer" format="color" tools:override="true"/>
+    <!-- 表示错误的颜色，通常用于错误消息和图标 -->
+    <attr name="colorError" format="color"/>
+    <!-- 在错误颜色上显示的颜色 -->
+    <attr name="colorOnError" format="color"/>
+    <!-- 错误颜色的容器，可以用于需要突出显示的元素 -->
+    <attr name="colorErrorContainer" format="color" tools:override="true"/>
+    <!-- 在错误颜色容器上显示的颜色 -->
+    <attr name="colorOnErrorContainer" format="color" tools:override="true"/>
+    <!-- 用于元素轮廓的颜色 -->
+    <attr name="colorOutline" format="color" tools:override="true"/>
+    <!-- 应用程序的背景颜色 -->
+    <attr name="colorBackground" format="color"/>
+    <!-- 在背景颜色上显示的颜色 -->
+    <attr name="colorOnBackground" format="color"/>
+    <!-- 表面的颜色，通常用于卡片和弹出窗口 -->
+    <attr name="colorSurface" format="color"/>
+    <!-- 在表面颜色上显示的颜色 -->
+    <attr name="colorOnSurface" format="color"/>
+    <!-- 表面颜色的变体，可以用于需要突出显示的元素 -->
+    <attr name="colorSurfaceVariant" format="color" tools:override="true"/>
+    <!-- 在表面颜色变体上显示的颜色 -->
+    <attr name="colorOnSurfaceVariant" format="color" tools:override="true"/>
+    <!-- 表面颜色的反色 -->
+    <attr name="colorSurfaceInverse" format="color" tools:override="true"/>
+    <!-- 在表面颜色反色上显示的颜色 -->
+    <attr name="colorOnSurfaceInverse" format="color" tools:override="true"/>
+    <!-- 主要颜色的反色 -->
+    <attr name="colorPrimaryInverse" format="color" tools:override="true"/>
+    <attr name="colorCustomColor1" format="color" />
+    <attr name="colorOnCustomColor1" format="color" />
+    <attr name="colorCustomColor1Container" format="color" />
+    <attr name="colorOnCustomColor1Container" format="color" />
+    <attr name="harmonizeCustomColor1" format="boolean" />
+    <attr name="colorSuccess" format="color"/>
+    <attr name="colorSuccessContainer" format="color"/>
+    <attr name="colorOnSuccess" format="color"/>
+    <attr name="colorOnSuccessContainer" format="color"/>
+</resources>

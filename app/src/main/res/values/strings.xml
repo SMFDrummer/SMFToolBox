@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">SMFToolBox</string>
+    <string name="app_label">SMFToolBox</string>
+    <string name="home">主页</string>
+    <string name="tool">工具</string>
+    <string name="setting">设置</string>
+    <string name="title">SMFToolBox</string>
+    <string name="Activate">激活</string>
+    <string name="uncheck">未激活\n请赋予软件必要权限\n权限缺失或配置缺失均无法运行</string>
+    <string name="checked">已激活\n欢迎使用SMFToolBox</string>
+    <string name="checked_donate">已激活\n欢迎使用SMFToolBox - 捐赠模式</string>
+    <string name="checked_admin">已激活\n欢迎使用SMFToolBox - 上帝模式</string>
+    <string name="start">Get Started!</string>
+    <string name="activate_listen">请输入激活码</string>
+    <string name="home_welcome">欢迎使用</string>
+    <string name="step1">第一步：选择您需要安装的PvZ2版本</string>
+    <string name="select_pvz2_version">点击选择</string>
+    <string name="step2">第二步：选择您想执行的操作</string>
+    <string name="selected_version">当前已选中：</string>
+    <string name="install">安装插件</string>
+    <string name="uninstall">卸载插件</string>
+    <string name="coding">VERSION</string>
+    <string name="debug">debug</string>
+    <string name="Debug">调试</string>
+    <string name="debug_log">DebugLogCat</string>
+    <string name="setting_theme">这里什么都没有</string>
+    <string name="select_plug">点击选择插件</string>
+    <string name="plugin_dynamic">群免费插件</string>
+    <string name="plugin_luz">LUZ</string>
+    <string name="plugin_pp">毒液豌豆</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Tool">工具集</string>
+    <string name="coming_soon">敬请期待</string>
+    <string name="title_activity_app_list">AppListActivity</string>
+
+
+</resources>

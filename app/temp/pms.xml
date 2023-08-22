@@ -1,0 +1,12 @@
+<!-- 外部存储的读权限 -->
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<!-- 外部存储的写权限 -->
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<!-- 内部存储的读权限 -->
+<uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+<!-- 内部存储的写权限 -->
+<uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+<application
+    android:requestLegacyExternalStorage="true"
+    ...>
+</application>

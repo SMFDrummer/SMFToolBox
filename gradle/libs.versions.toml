@@ -1,0 +1,30 @@
+[versions]
+agp = "8.2.0-alpha15"
+junit = "4.13.2"
+androidx-test-ext-junit = "1.1.5"
+espresso-core = "3.5.1"
+appcompat = "1.6.1"
+material = "1.9.0"
+constraintlayout = "2.1.4"
+fastjson2 = "2.0.38"
+bcprov-jdk18on = "1.76"
+recyclerview = "1.3.0"
+palette = "1.0.0"
+dialogX = "0.0.48"
+
+[libraries]
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+fastjson2 = { group = "com.alibaba.fastjson2", name = "fastjson2", version.ref = "fastjson2" }
+bcprov-jdk18on = { group = "org.bouncycastle", name = "bcprov-jdk18on", version.ref = "bcprov-jdk18on" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+androidx-palette = { group = "androidx.palette", name = "palette", version.ref = "palette" }
+dialogX = { group = "com.kongzue.dialogx", name = "DialogX", version.ref = "dialogX" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="smfBottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <!-- 设置背景颜色 -->
+        <item name="android:background">?attr/colorSurface</item>
+        <!-- 设置未选中的菜单项的颜色 -->
+        <item name="itemIconTint">?attr/colorOnSurface</item>
+        <item name="itemTextColor">?attr/colorOnSurface</item>
+        <!-- 去掉点击时的波纹效果 -->
+        <item name="itemRippleColor">@null</item>
+    </style>
+
+</resources>
