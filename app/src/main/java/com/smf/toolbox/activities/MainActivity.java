@@ -1,6 +1,7 @@
 package com.smf.toolbox.activities;
 
 import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.view.Window;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.smf.toolbox.R;
 import com.smf.toolbox.adapters.ViewPagerAdapter;
@@ -27,6 +30,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        /*AppBarLayout appBarLayout = findViewById(R.id.appbar_layout);
+        CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
+        appBarLayout.addOnOffsetChangedListener((appBarLayout1, verticalOffset) -> {
+            if(Math.abs(verticalOffset) >= appBarLayout1.getTotalScrollRange()){
+                collapsingToolbarLayout.setTitleEnabled(true);
+            }else{
+                collapsingToolbarLayout.setTitleEnabled(false);
+            }
+        });*/
+
 
         ViewPager2 viewPager2 = findViewById(R.id.viewPager);
         viewPager2.setCurrentItem(0);
@@ -54,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 super.onPageScrollStateChanged(state);
             }
         });
-        ViewPager2.PageTransformer pageTransformer = (page, position) -> {
+        /*ViewPager2.PageTransformer pageTransformer = (page, position) -> {
             page.setCameraDistance(12000); // Increase the camera distance
 
             if (position < -1) { // [-Infinity,-1)
@@ -73,7 +87,28 @@ public class MainActivity extends AppCompatActivity {
                 // This page is way off-screen to the right.
                 page.setAlpha(0);
             }
+        };*/
+        ViewPager2.PageTransformer pageTransformer = (page, position) -> {
+            page.setCameraDistance(12000);
+
+            if (position < -1) {
+                page.setAlpha(0f);
+                page.setTranslationZ(-1f);
+            } else if (position <= 0) {
+                page.setAlpha(1 + position);
+                page.setTranslationX(page.getWidth() * -position);
+                page.setTranslationZ(0f);
+            } else if (position <= 1) {
+                page.setAlpha(1 - position);
+                page.setTranslationX(page.getWidth() * -position);
+                page.setTranslationZ(-1f);
+            } else {
+                page.setAlpha(0f);
+                page.setTranslationZ(-1f);
+            }
         };
+
+
 
 
         Window window = getWindow();

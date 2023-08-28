@@ -87,7 +87,6 @@ public class HomeFragment extends Fragment {
         checkerImage = view.findViewById(R.id.checkerImage);
         checkerText = view.findViewById(R.id.checkerText);
 
-
         configChecker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
