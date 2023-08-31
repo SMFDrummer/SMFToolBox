@@ -20,9 +20,6 @@ import com.smf.toolbox.fragments.SettingsFragment;
 import com.smf.toolbox.fragments.ToolFragment;
 
 public class MainActivity extends AppCompatActivity {
-    private final HomeFragment homeFragment = new HomeFragment();
-    private final ToolFragment toolFragment = new ToolFragment();
-    private final SettingsFragment settingsFragment = new SettingsFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

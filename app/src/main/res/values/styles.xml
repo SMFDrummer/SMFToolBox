@@ -10,4 +10,9 @@
         <item name="itemRippleColor">@null</item>
     </style>
 
+    <style name="ShapeableImageViewAppearance">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10%</item>
+    </style>
+
 </resources>

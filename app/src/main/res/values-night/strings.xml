@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">SMFToolBox</string>
+    <string name="app_label">SMFToolBox</string>
     <string name="home">主页</string>
     <string name="tool">工具</string>
+    <string name="setting">设置</string>
     <string name="title">SMFToolBox</string>
+    <string name="Activate">激活</string>
+    <string name="uncheck">未激活\n请赋予软件必要权限\n权限缺失或配置缺失均无法运行</string>
+    <string name="checked">已激活\n欢迎使用SMFToolBox</string>
+    <string name="checked_donate">已激活\n欢迎使用SMFToolBox - 捐赠模式</string>
+    <string name="checked_admin">已激活\n欢迎使用SMFToolBox - 上帝模式</string>
+    <string name="unbind">未绑定游戏\n点击绑定设备中已安装的植物大战僵尸2中文版</string>
+    <string name="bind_talkweb">已绑定游戏\n渠道 - 拓维官服</string>
+    <string name="bind_taptap">已绑定游戏\n渠道 - Taptap服</string>
+    <string name="bind_hykb">已绑定游戏\n渠道 - 好游快爆服</string>
+    <string name="copy">复制</string>
 </resources>

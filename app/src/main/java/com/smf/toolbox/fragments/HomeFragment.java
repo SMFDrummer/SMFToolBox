@@ -23,7 +23,9 @@ import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.color.MaterialColors;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textview.MaterialTextView;
+import com.kongzue.dialogx.dialogs.BottomDialog;
 import com.kongzue.dialogx.dialogs.PopTip;
+import com.kongzue.dialogx.interfaces.OnBindView;
 import com.smf.toolbox.R;
 import com.smf.toolbox.checker.StoragePermissionChecker;
 
@@ -45,10 +47,11 @@ public class HomeFragment extends Fragment {
      * 以上就是Fragment的生命周期，每个阶段都有对应的方法，可以根据需要在这些方法中实现相应的功能。
      */
     View view;
-    MaterialCardView configChecker;
-    ShapeableImageView checkerImage;
-    MaterialTextView checkerText;
+    MaterialCardView configChecker,gameBinder;
+    ShapeableImageView checkerImage,binderImage;
+    MaterialTextView checkerText,binderText;
     private StoragePermissionChecker storagePermissionChecker;
+    private String pvz2Package = "";
 
 
     @Override
@@ -87,6 +90,10 @@ public class HomeFragment extends Fragment {
         checkerImage = view.findViewById(R.id.checkerImage);
         checkerText = view.findViewById(R.id.checkerText);
 
+        gameBinder = view.findViewById(R.id.gameBinder);
+        binderImage = view.findViewById(R.id.binderImage);
+        binderText = view.findViewById(R.id.binderText);
+
         configChecker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,6 +115,19 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        gameBinder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BottomDialog.build()
+                        .setCustomView(new OnBindView<BottomDialog>() {
+                            @Override
+                            public void onBind(BottomDialog dialog, View v) {
+
+                            }
+                        })
+            }
+        });
+
         return view;
     }
 
@@ -123,16 +143,35 @@ public class HomeFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        if (storagePermissionChecker.check(requireActivity())) {
+        if (pvz2Package.isBlank()){
+            checker_unavailable(configChecker, checkerImage, checkerText);
+            binder_unbind(gameBinder,binderImage,binderText);
+        } else if (storagePermissionChecker.check(requireActivity())) {
             checker_checked(configChecker, checkerImage, checkerText);
+            binder_binded(gameBinder,binderImage,binderText);
         } else {
             checker_uncheck(configChecker, checkerImage, checkerText);
+            binder_binded(gameBinder,binderImage,binderText);
             PopTip.show("未获取权限");
         }
     }
 
+    private void checker_unavailable(MaterialCardView configChecker, ShapeableImageView checkerImage, MaterialTextView checkerText) {
+        configChecker.setClickable(false);
+        configChecker.setLongClickable(false);
+        configChecker.setCardBackgroundColor(MaterialColors.getColor(checkerImage, R.attr.colorTertiaryContainer));
+
+        Drawable drawable = ContextCompat.getDrawable(requireActivity(), R.drawable.ic_uncheck);
+        checkerImage.setImageDrawable(drawable);
+        checkerImage.setImageTintList(ColorStateList.valueOf(MaterialColors.getColor(checkerImage, R.attr.colorTertiary)));
+
+        checkerText.setText(R.string.unavailable);
+        checkerText.setTextColor(MaterialColors.getColor(checkerImage, R.attr.colorOnTertiaryContainer));
+    }
 
     private void checker_checked(MaterialCardView configChecker, ShapeableImageView checkerImage, MaterialTextView checkerText) {
+        configChecker.setClickable(true);
+        configChecker.setLongClickable(true);
         configChecker.setCardBackgroundColor(MaterialColors.getColor(checkerImage, R.attr.colorSuccessContainer));
 
         Drawable drawable = ContextCompat.getDrawable(requireActivity(), R.drawable.ic_checked);
@@ -144,6 +183,8 @@ public class HomeFragment extends Fragment {
     }
 
     private void checker_uncheck(MaterialCardView configChecker, ShapeableImageView checkerImage, MaterialTextView checkerText) {
+        configChecker.setClickable(true);
+        configChecker.setLongClickable(true);
         configChecker.setCardBackgroundColor(MaterialColors.getColor(checkerImage, R.attr.colorErrorContainer));
 
         Drawable drawable = ContextCompat.getDrawable(requireActivity(), R.drawable.ic_uncheck);
@@ -152,6 +193,27 @@ public class HomeFragment extends Fragment {
 
         checkerText.setText(R.string.uncheck);
         checkerText.setTextColor(MaterialColors.getColor(checkerImage, R.attr.colorOnErrorContainer));
+    }
+    private void binder_binded(MaterialCardView gameBinder, ShapeableImageView binderImage, MaterialTextView binderText) {
+        gameBinder.setCardBackgroundColor(MaterialColors.getColor(binderImage, R.attr.colorSuccessContainer));
+
+        Drawable drawable = ContextCompat.getDrawable(requireActivity(), R.drawable.ic_checked);
+        binderImage.setImageDrawable(drawable);
+        binderImage.setImageTintList(ColorStateList.valueOf(MaterialColors.getColor(binderImage, R.attr.colorSuccess)));
+
+        binderText.setText(R.string.bind_talkweb);
+        binderText.setTextColor(MaterialColors.getColor(binderImage, R.attr.colorOnSuccessContainer));
+    }
+
+    private void binder_unbind(MaterialCardView gameBinder, ShapeableImageView binderImage, MaterialTextView binderText) {
+        gameBinder.setCardBackgroundColor(MaterialColors.getColor(binderImage, R.attr.colorErrorContainer));
+
+        Drawable drawable = ContextCompat.getDrawable(requireActivity(), R.drawable.ic_uncheck);
+        binderImage.setImageDrawable(drawable);
+        binderImage.setImageTintList(ColorStateList.valueOf(MaterialColors.getColor(binderImage, R.attr.colorError)));
+
+        binderText.setText(R.string.unbind);
+        binderText.setTextColor(MaterialColors.getColor(binderImage, R.attr.colorOnErrorContainer));
     }
 
 }
